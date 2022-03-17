@@ -41,5 +41,24 @@ public class Livro extends Produto implements Imposto {
 	public void setQtdPag(int qtdPag) {
 		this.qtdPag = qtdPag;
 	}
+	
+	@Override
+	public String toString() {
+		return "Título: " + getNome() +  " preço: " + getPreco() + " quantidade: " + getQtdPag() + " em estoque";
+	}
+	
+	@Override
+	public double calculaImposto() {
+
+		double imposto;
+		if (tema.equals("educativo")) {
+			imposto = 0d;
+		
+		} else {
+			 imposto = this.getPreco() * this.qtdPag * 0.10;
+		}
+		return imposto;
+	}
+
 
 }

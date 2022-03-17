@@ -44,7 +44,17 @@ public class VideoGame extends Produto implements Imposto {
 
 	@Override
 	public String toString() {
-		return modelo + " preço: " + getPreco() + "quantidade: " + getQtd() + "em estoque";
+		return modelo + " preço: " + getPreco() + " quantidade: " + getQtd() + " em estoque";
 	}
 
+	@Override
+	public double calculaImposto() {
+		double imposto = 0;
+		if(isUsado) {
+			imposto = this.getPreco() * 0.25;
+		} else {
+		imposto = this.getPreco() * 0.45;
+	}
+		return imposto;
+}
 }
