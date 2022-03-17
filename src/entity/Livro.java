@@ -55,7 +55,7 @@ public class Livro extends Produto implements Imposto {
 			imposto = 0d;
 		
 		} else {
-			 imposto = this.getPreco() * this.qtdPag * 0.10;
+			 imposto = this.getPreco() * 0.10;
 		}
 		return imposto;
 	}
